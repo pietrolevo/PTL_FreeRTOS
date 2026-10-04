@@ -1,0 +1,28 @@
+scheduler:
+  policy: SKIP
+  max_tasks: 8
+  trace_enabled: true
+
+tasks:
+  - name: BrakeMonitor
+    period_ms: 50
+    deadline_ms: 50
+    priority: 4
+    wcet_ms: 5
+
+  - name: EngineSensor
+    period_ms: 100
+    deadline_ms: 50
+    priority: 3
+    wcet_ms: 48
+
+  - name: Dashboard
+    period_ms: 200
+    deadline_ms: 150
+    priority: 2
+    wcet_ms: 15
+
+  - name: BrakePedalSim
+    period_ms: 500
+    priority: 1
+    wcet_ms: 5
